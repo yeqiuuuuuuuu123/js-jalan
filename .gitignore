@@ -1,15 +1,11 @@
-
-# Dependencies
 **/node_modules/
 
-# Environment variables and secrets
 .env
 .env.*
 **/.env
 **/.env.*
 !.env.example
 
-# Build output and caches
 **/dist/
 **/build/
 **/coverage/
@@ -19,18 +15,15 @@
 **/.venv/
 **/venv/
 
-# Uploaded user data
 login-project/backend/uploads/*
 !login-project/backend/uploads/.gitkeep
 
-# Debug images
 login-project/backend/ai/debug.jpg
 
 # Logs
 *.log
 npm-debug.log*
 
-# Local databases and backups
 *.sqlite
 *.sqlite3
 *.db
@@ -38,14 +31,12 @@ npm-debug.log*
 *.dump
 *.bak
 
-# Private keys and credentials
 *.pem
 *.key
 *.p12
 *.pfx
 *service-account*.json
 
-# Editor and operating system files
 .DS_Store
 Thumbs.db
 .vscode/
