@@ -20,7 +20,6 @@ login-project/backend/uploads/*
 
 login-project/backend/ai/debug.jpg
 
-# Logs
 *.log
 npm-debug.log*
 
