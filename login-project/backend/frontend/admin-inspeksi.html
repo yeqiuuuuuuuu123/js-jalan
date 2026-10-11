@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>Admin Inspeksi Jalan</title>
+
+  <link
+    rel="stylesheet"
+    href="admin-inspeksi.css"
+  >
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  >
+
+</head>
+
+<body>
+
+  <div class="menu-btn" id="menuBtn">
+☰
+</div>
+
+<div class="overlay" id="overlay"></div>
+
+  <!-- SIDEBAR -->
+
+  <div class="sidebar">
+
+    <div class="logo">
+      Deteksi Jalan
+    </div>
+
+    <nav>
+
+      <a href="index.html">Beranda</a>
+
+      <a href="my-account.html">My Account</a>
+
+      <a href="dashboard.html">Dashboard</a>
+
+      <a href="lokasi.html">Lokasi</a>
+
+      <a href="mulai-deteksi.html">Mulai Deteksi</a>
+      
+      <a href="rekap-data.html">Rekap Data</a>
+
+      <a href="hasil-deteksi.html">Hasil Deteksi</a>
+
+      <a href="pelaporan.html">Pelaporan</a>
+
+      <a href="data-riwayat.html">Data Riwayat</a>
+
+      <a
+        href="admin-inspeksi.html"
+        class="active"
+      >
+        Admin Inspeksi
+      </a>
+
+      <a
+        href="#"
+        onclick="logout()"
+      >
+        Logout
+      </a>
+
+    </nav>
+
+  </div>
+
+  <!-- MAIN -->
+
+  <div class="main">
+
+    <div class="header-box">
+
+      <h1>
+        Admin Inspeksi Jalan
+      </h1>
+
+      <p>
+        Kelola laporan kerusakan jalan dari masyarakat
+      </p>
+
+    </div>
+
+    <!-- TABLE CARD -->
+
+    <div class="table-card">
+
+      <div class="table-header">
+
+        <h2>
+          Data Pelaporan Jalan
+        </h2>
+
+        <input
+          type="text"
+          id="searchInput"
+          placeholder="Cari lokasi..."
+          title="Cari lokasi"
+        >
+
+      </div>
+
+      <div class="table-wrapper">
+
+        <table>
+
+          <thead>
+
+            <tr>
+
+              <th>No</th>
+
+              <th>Foto</th>
+
+              <th>Lokasi</th>
+
+              <th>Kerusakan</th>
+
+              <th>Status</th>
+
+              <th>Aksi</th>
+
+            </tr>
+
+          </thead>
+
+          <tbody id="tableBody">
+
+          </tbody>
+
+        </table>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- MODAL -->
+
+  <div
+    class="modal"
+    id="modal"
+  >
+
+    <div class="modal-content">
+
+      <span
+        class="close"
+        id="closeModal"
+      >
+        &times;
+      </span>
+
+      <h2>
+        Detail Inspeksi Jalan
+      </h2>
+
+      <!-- FOTO -->
+
+      <img
+        id="modalImage"
+        class="modal-image"
+        src=""
+        alt="Foto Kerusakan Jalan"
+      >
+
+      <!-- INFORMASI -->
+
+      <div class="modal-info">
+
+        <p>
+          <strong>Lokasi :</strong>
+          <span id="modalLokasi"></span>
+        </p>
+
+        <p>
+          <strong>Deskripsi :</strong>
+          <span id="modalDescription"></span>
+        </p>
+
+      </div>
+
+      <!-- KERUSAKAN -->
+
+      <label for="severitySelect">
+        Tingkat Kerusakan
+      </label>
+
+      <select
+        id="severitySelect"
+        title="Pilih tingkat kerusakan"
+      >
+
+        <option value="kecil">
+          Kecil
+        </option>
+
+        <option value="sedang">
+          Sedang
+        </option>
+
+        <option value="besar">
+          Besar
+        </option>
+
+      </select>
+
+      <!-- STATUS -->
+
+      <label for="statusSelect">
+        Status Inspeksi
+      </label>
+
+      <select
+        id="statusSelect"
+        title="Pilih status inspeksi"
+      >
+
+        <option value="Pending">
+          Pending
+        </option>
+
+        <option value="Diproses">
+          Diproses
+        </option>
+
+        <option value="Selesai">
+          Selesai
+        </option>
+
+      </select>
+
+
+      <!-- CATATAN -->
+
+      <label for="adminNote">
+        Catatan Admin
+      </label>
+
+      <textarea
+        id="adminNote"
+        rows="4"
+        placeholder="Masukkan catatan hasil inspeksi..."
+        title="Catatan Admin"
+      ></textarea>
+
+      <!-- BUTTON -->
+
+      <div class="btn-group">
+
+        <button
+          class="save-btn"
+          id="saveBtn"
+        >
+          Simpan Inspeksi
+        </button>
+
+        <button
+          class="delete-btn"
+          id="deleteBtn"
+        >
+          Hapus Laporan
+        </button>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <script src="admin-inspeksi.js"></script>
+
+</body>
+
+</html>

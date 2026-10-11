@@ -1,0 +1,22 @@
+
+services:
+  backend:
+    build: ./backend
+    ports:
+      - "5000:5000"
+    depends_on:
+      - mongo
+    environment:
+      - MONGO_URI=${MONGO_URI}
+      - JWT_SECRET=${JWT_SECRET}
+    volumes:
+      - ./backend:/app
+      - /app/node_modules
+
+  mongo:
+    image: mongo:6
+    volumes:
+      - mongo_data:/data/db
+
+volumes:
+  mongo_data:

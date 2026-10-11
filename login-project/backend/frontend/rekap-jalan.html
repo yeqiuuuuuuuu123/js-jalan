@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rekap Kerusakan Per Jalan</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="rekap-jalan.css">
+</head>
+<body>
+<div class="menu-btn" id="menuBtn">☰</div>
+<div class="overlay" id="overlay"></div>
+<aside class="sidebar">
+  <div class="logo">Deteksi Jalan</div>
+  <nav>
+    <a href="index.html">Beranda</a>
+    <a href="my-account.html">My Account</a>
+    <a href="dashboard.html">Dashboard</a>
+    <a href="lokasi.html">Lokasi</a>
+    <a href="mulai-deteksi.html" id="menuDeteksi">Mulai Deteksi</a>
+    <a href="rekap-data.html">Rekap Data</a>
+    <a href="rekap-jalan.html" class="active">Rekap Jalan</a>
+    <a href="hasil-deteksi.html">Hasil Deteksi</a>
+    <a href="pelaporan.html">Pelaporan</a>
+    <a href="data-riwayat.html">Data Riwayat</a>
+    <a href="admin-inspeksi.html" id="menuAdmin">Admin Inspeksi</a>
+    <a href="login.html">Logout</a>
+  </nav>
+</aside>
+<main class="main">
+  <div class="header-box">
+    <div>
+      <h1>Rekap Kerusakan Per Jalan</h1>
+      <p>Rekap jumlah kerusakan berdasarkan Jarak jalan pada peta</p>
+    </div>
+  </div>
+  <section class="panel">
+    <div class="panel-head">
+      <div>
+        <div class="panel-title">Rekap Data Jalan</div>
+        <div class="panel-subtitle">Jumlah lubang berasal dari data deteksi yang sudah tersimpan. Jarak Jalan mengikuti data jalan OpenStreetMap.</div>
+      </div>
+      <button id="refreshBtn" class="refresh-btn">↻ Perbarui</button>
+    </div>
+    <div id="status" class="status">Memuat data...</div>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>No</th>
+            <th>Jalan</th>
+            <th>Jumlah Lubang</th>
+            <th>Jarak(km)</th>
+          </tr>
+        </thead>
+        <tbody id="roadTableBody">
+          <tr><td colspan="4" class="empty">Memuat data...</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+</main>
+<script src="rekap-jalan.js"></script>
+</body>
+</html>

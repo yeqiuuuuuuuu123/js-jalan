@@ -1,0 +1,471 @@
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Poppins',sans-serif;
+}
+
+body{
+  min-height:100vh;
+  overflow:hidden;
+  color:white;
+
+  background:
+    linear-gradient(
+      135deg,
+      #010816,
+      #02142a,
+      #031a34
+    );
+}
+
+/* =========================
+   BACKGROUND
+========================= */
+
+.bg{
+  position:fixed;
+  inset:0;
+
+  background:
+    radial-gradient(
+      circle at top left,
+      rgba(0,255,200,.15),
+      transparent 35%
+    ),
+
+    radial-gradient(
+      circle at bottom right,
+      rgba(0,191,255,.12),
+      transparent 35%
+    );
+
+  z-index:-1;
+}
+
+/* =========================
+   CONTAINER
+========================= */
+
+.container{
+  width:100%;
+  min-height:100vh;
+
+  display:grid;
+
+  grid-template-columns:1fr 1fr;
+
+  align-items:center;
+
+  gap:70px;
+
+  padding:0 90px;
+}
+
+/* =========================
+   LEFT
+========================= */
+
+.left{
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+
+  text-align:center;
+}
+
+/* =========================
+   LOGO
+========================= */
+
+.logo-box{
+  margin-bottom:25px;
+}
+
+.logo-box h1{
+  font-size:42px;
+  font-weight:800;
+
+  background:
+    linear-gradient(
+      90deg,
+      #00f5c3,
+      #00bfff
+    );
+
+  -webkit-background-clip:text;
+  background-clip:text;
+  -webkit-text-fill-color:transparent;
+}
+
+.logo-box p{
+  margin-top:8px;
+
+  color:#94a3b8;
+
+  font-size:17px;
+}
+
+/* =========================
+   EDIT HERO
+========================= */
+
+.edit-hero{
+  max-width:650px;
+}
+
+.illustration{
+  width:500px;
+  max-width:100%;
+
+  margin-bottom:20px;
+
+  mix-blend-mode:lighten;
+
+  animation:floating 4s ease-in-out infinite;
+}
+
+@keyframes floating{
+
+  0%{
+    transform:translateY(0px);
+  }
+
+  50%{
+    transform:translateY(-16px);
+  }
+
+  100%{
+    transform:translateY(0px);
+  }
+}
+
+.edit-hero-title{
+  font-size:58px;
+  font-weight:800;
+
+  margin-bottom:12px;
+
+  line-height:1.1;
+}
+
+.gradient{
+  background:
+    linear-gradient(
+      90deg,
+      #00f5c3,
+      #00bfff
+    );
+
+  -webkit-background-clip:text;
+  background-clip:text;
+  -webkit-text-fill-color:transparent;
+}
+
+.edit-hero-desc{
+  color:#94a3b8;
+
+  font-size:18px;
+
+  line-height:1.6;
+}
+
+/* =========================
+   RIGHT
+========================= */
+
+.right{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+
+/* =========================
+   CARD
+========================= */
+
+.profile-card{
+  width:100%;
+  max-width:500px;
+
+  padding:42px 50px;
+
+  border-radius:35px;
+
+  background:
+    rgba(255,255,255,.04);
+
+  border:
+    1px solid rgba(255,255,255,.08);
+
+  -webkit-backdrop-filter:blur(20px);
+  backdrop-filter:blur(20px);
+
+  box-shadow:
+    0 20px 60px rgba(0,0,0,.45);
+}
+
+/* =========================
+   TITLE
+========================= */
+
+.profile-card h2{
+  font-size:54px;
+  font-weight:800;
+
+  margin-bottom:8px;
+
+  line-height:1;
+}
+
+.subtitle{
+  color:#94a3b8;
+
+  margin-bottom:26px;
+
+  font-size:18px;
+}
+
+/* =========================
+   PHOTO
+========================= */
+
+.photo-box{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+
+  margin-bottom:26px;
+}
+
+.photo-label{
+  font-size:15px;
+  font-weight:600;
+
+  margin-bottom:14px;
+}
+
+.avatar{
+  width:120px;
+  height:120px;
+
+  border-radius:50%;
+
+  background:
+    linear-gradient(
+      135deg,
+      #00f5c3,
+      #00bfff
+    );
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  font-size:42px;
+  font-weight:800;
+
+  color:#04101d;
+
+  overflow:hidden;
+
+  margin-bottom:14px;
+}
+
+.avatar img{
+  width:100%;
+  height:100%;
+
+  object-fit:cover;
+}
+
+#photoInput{
+  color:white;
+
+  font-size:14px;
+}
+
+/* =========================
+   INPUT
+========================= */
+
+.input-group{
+  margin-bottom:22px;
+}
+
+.input-group label{
+  display:block;
+
+  margin-bottom:10px;
+
+  font-weight:600;
+}
+
+.input-box{
+  width:100%;
+  height:68px;
+
+  border-radius:20px;
+
+  background:
+    rgba(255,255,255,.05);
+
+  border:
+    1px solid rgba(255,255,255,.08);
+
+  display:flex;
+  align-items:center;
+
+  padding:0 20px;
+
+  transition:.3s;
+}
+
+.input-box:focus-within{
+
+  border:
+    1px solid #00f5c3;
+
+  box-shadow:
+    0 0 20px rgba(0,255,200,.15);
+}
+
+.input-box input{
+  width:100%;
+
+  background:none;
+  border:none;
+  outline:none;
+
+  color:white;
+
+  font-size:16px;
+}
+
+.input-box input::placeholder{
+  color:#64748b;
+}
+
+/* =========================
+   BUTTON
+========================= */
+
+#saveBtn{
+  width:100%;
+  height:68px;
+
+  border:none;
+
+  border-radius:20px;
+
+  margin-top:10px;
+
+  background:
+    linear-gradient(
+      90deg,
+      #00f5c3,
+      #1da1ff
+    );
+
+  color:#04101d;
+
+  font-size:20px;
+  font-weight:800;
+
+  cursor:pointer;
+
+  transition:.3s;
+}
+
+#saveBtn:hover{
+  transform:translateY(-3px);
+}
+
+/* =========================
+   MESSAGE
+========================= */
+
+#message{
+  margin-top:16px;
+
+  text-align:center;
+
+  font-size:14px;
+
+  min-height:20px;
+}
+
+/* =========================
+   BACK BUTTON
+========================= */
+
+.back-btn{
+  width:100%;
+  height:64px;
+
+  margin-top:14px;
+
+  border-radius:20px;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  text-decoration:none;
+
+  background:
+    rgba(255,255,255,.05);
+
+  border:
+    1px solid rgba(255,255,255,.08);
+
+  color:#00f5c3;
+
+  font-size:18px;
+  font-weight:700;
+
+  transition:.3s;
+}
+
+.back-btn:hover{
+
+  background:
+    rgba(255,255,255,.08);
+
+  transform:translateY(-3px);
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:950px){
+
+  body{
+    overflow:auto;
+  }
+
+  .container{
+    grid-template-columns:1fr;
+    padding:20px;
+    justify-items:center;
+  }
+
+  .left{
+    display:none;
+  }
+
+  .right{
+    width:100%;
+    display:flex;
+    justify-content:center;
+  }
+
+  .profile-card{
+    width:100%;
+    max-width:420px;
+    margin:0 auto;
+    padding:35px 28px;
+  }
+}

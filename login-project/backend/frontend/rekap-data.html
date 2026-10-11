@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Rekap Data Kerusakan Jalan</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="rekap-data.css">
+
+</head>
+
+<body>
+
+    <div class="menu-btn" id="menuBtn">
+☰
+</div>
+
+<div class="overlay" id="overlay"></div>
+
+
+<!-- SIDEBAR -->
+
+<div class="sidebar">
+
+    <div class="logo">
+
+        Deteksi Jalan
+
+    </div>
+
+    <nav>
+
+        <a href="index.html">
+            Beranda
+        </a>
+
+        <a href="my-account.html">
+            My Account
+        </a>
+
+        <a href="dashboard.html">
+            Dashboard
+        </a>
+
+        <a href="lokasi.html">
+            Lokasi
+        </a>
+
+        <a href="mulai-deteksi.html"
+            id="menuDeteksi"
+        >
+            Mulai Deteksi
+        </a>
+
+         <a href="rekap-data.html" class="active">
+             Rekap Data
+        </a>
+
+        <a href="hasil-deteksi.html">
+            Hasil Deteksi
+        </a>
+
+        <a href="pelaporan.html">
+            Pelaporan
+        </a>
+
+        <a href="data-riwayat.html">
+            Data Riwayat
+        </a>
+
+        <a href="admin-inspeksi.html"
+            id="menuAdmin">
+            Admin Inspeksi
+        </a>
+
+        <a href="#" onclick="logout()">
+            Logout
+        </a>
+
+    </nav>
+
+</div>
+
+<!-- MAIN CONTENT -->
+
+<div class="main">
+
+    <!-- HEADER -->
+
+    <div class="header-box">
+
+        <h1>
+            Rekap Data Kerusakan Jalan
+        </h1>
+
+        <p>
+            Monitoring kondisi jalan berdasarkan wilayah hasil deteksi YOLO
+        </p>
+
+    </div>
+
+    <!-- SUMMARY -->
+
+    <div class="summary-grid">
+
+        <div class="summary-card">
+
+            <h3>
+                Total Kota
+            </h3>
+
+            <p id="totalKota">
+                0
+            </p>
+
+        </div>
+
+        <div class="summary-card">
+
+            <h3>
+                Total Kerusakan
+            </h3>
+
+            <p id="totalKerusakan">
+                0
+            </p>
+
+        </div>
+
+        <div class="summary-card">
+
+            <h3>
+                IKJ Rata-rata
+            </h3>
+
+            <p id="avgIKJ">
+                0%
+            </p>
+
+        </div>
+
+        <div class="summary-card">
+
+            <h3>
+                Prioritas Tinggi
+            </h3>
+
+            <p id="prioritas">
+                0
+            </p>
+
+        </div>
+
+    </div>
+
+    <!-- TABLE -->
+
+    <div class="table-card">
+
+        <div class="table-header">
+
+            <h2>
+                Rekap Wilayah
+            </h2>
+
+            <input
+                type="text"
+                id="searchInput"
+                placeholder="Cari kota..."
+            >
+
+            <button
+                id="deleteAllBtn"
+                class="delete-all-btn"
+                onclick="deleteAllData()"
+            >
+                Hapus Semua Data
+            </button>
+            
+
+        </div>
+
+        <div class="table-wrapper">
+
+            <table>
+
+                <thead>
+
+                    <tr>
+
+                        <th>No</th>
+
+                        <th>Kota / Kecamatan</th>
+
+                        <th>Ringan</th>
+
+                        <th>Sedang</th>
+
+                        <th>Berat</th>
+
+                        <th>Total</th>
+
+                        <th>IKJ</th>
+
+                        <th>Status</th>
+
+                        <th>Aksi</th>
+
+                    </tr>
+
+                </thead>
+
+                <tbody id="tableBody">
+
+                    <!-- Data otomatis dari JS -->
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </div>
+
+</div>
+
+<script src="rekap-data.js"></script>
+
+<script>
+
+function logout(){
+
+    localStorage.removeItem("token");
+
+    window.location.href =
+    "login.html";
+
+}
+
+
+</script>
+
+</body>
+
+</html>

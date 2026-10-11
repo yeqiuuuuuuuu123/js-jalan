@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Dashboard Monitoring Jalan</title>
+
+<link rel="stylesheet" href="dashboard.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<link
+rel="stylesheet"
+href="https://unpkg.com/leaflet/dist/leaflet.css"
+/>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+
+</head>
+
+<body>
+
+<div class="menu-btn" id="menuBtn">
+☰
+</div>
+
+<div class="overlay" id="overlay"></div>
+
+<!-- SIDEBAR -->
+
+<aside class="sidebar">
+
+<div class="logo">
+Deteksi Jalan
+</div>
+
+<nav>
+
+<a href="index.html">Beranda</a>
+<a href="my-account.html">My Account</a>
+<a href="dashboard.html" class="active">Dashboard</a>
+<a href="lokasi.html">Lokasi</a>
+<a href="mulai-deteksi.html"
+   id="menuDeteksi"
+>
+    Mulai Deteksi
+
+</a>
+
+<a href="rekap-data.html">Rekap Data</a>
+<a href="hasil-deteksi.html">Hasil Deteksi</a>
+<a href="pelaporan.html">Pelaporan</a>
+<a href="data-riwayat.html">Data Riwayat</a>
+<a href="admin-inspeksi.html"
+    id="menuAdmin"
+>
+    
+    Admin Inspeksi
+
+</a>
+<a href="login.html">Logout</a>
+
+</nav>
+
+</aside>
+
+<!-- MAIN -->
+
+<main class="main">
+
+<!-- HEADER -->
+
+<div class="topbar">
+
+<div>
+
+<h1>Dashboard Monitoring Jalan</h1>
+
+<p>
+Sistem AI Deteksi Kerusakan Jalan Berbasis YOLOv8 + GPS
+</p>
+
+</div>
+
+<div class="user-box">
+
+<div class="online"></div>
+
+<span>System Active</span>
+
+</div>
+
+</div>
+
+<!-- CARD -->
+
+<section class="cards">
+
+<div class="card glow1">
+
+<h3>Total Deteksi</h3>
+
+<p id="total">0</p>
+
+<span class="card-info">
+Seluruh data kerusakan
+</span>
+
+</div>
+
+<div class="card glow2">
+
+<h3>Ringan</h3>
+
+<p id="ringan">0</p>
+
+<span class="card-info">
+Kerusakan kecil
+</span>
+
+</div>
+
+<div class="card glow3">
+
+<h3>Sedang</h3>
+
+<p id="sedang">0</p>
+
+<span class="card-info">
+Perlu perbaikan
+</span>
+
+</div>
+
+<div class="card glow4">
+
+<h3>Berat</h3>
+
+<p id="berat">0</p>
+
+<span class="card-info">
+Prioritas tinggi
+</span>
+
+</div>
+
+<div class="card glow5">
+
+<h3>IKJ</h3>
+
+<p id="ikj">0%</p>
+
+<span class="card-info">
+Indeks Kelayakan Jalan
+</span>
+
+</div>
+
+</section>
+
+<!-- GRID 1 -->
+
+<section class="dashboard-grid">
+
+<div class="panel chart-panel">
+
+<div class="panel-title">
+
+Statistik Kerusakan
+
+</div>
+
+<canvas id="damageChart"></canvas>
+
+</div>
+
+<div class="panel">
+
+<div class="panel-title">
+
+Status Sistem
+
+</div>
+
+<div class="status-item">
+<span>YOLOv8 Detection</span>
+<span class="status active">ACTIVE</span>
+</div>
+
+<div class="status-item">
+<span>MongoDB</span>
+<span class="status active">CONNECTED</span>
+</div>
+
+<div class="status-item">
+<span>Realtime Camera</span>
+<span class="status active">ONLINE</span>
+</div>
+
+<div class="status-item">
+<span>GPS Tracking</span>
+<span class="status active">READY</span>
+</div>
+
+</div>
+
+</section>
+
+<!-- GRID 2 -->
+
+<section class="dashboard-grid">
+
+<div class="panel">
+
+<div class="panel-title">
+
+Trend Kerusakan Harian
+
+</div>
+
+<canvas id="trendChart"></canvas>
+
+</div>
+
+<div class="panel">
+
+<div class="panel-title">
+
+Kelayakan Jalan
+
+</div>
+
+<div class="progress-box">
+
+<div class="progress-info">
+
+<span>Kondisi Jalan</span>
+
+<span id="ikjText">
+
+0%
+
+</span>
+
+</div>
+
+<div class="progress-bar">
+
+<div
+class="progress-fill"
+id="progressFill"
+></div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- GRID 3 -->
+
+<section class="dashboard-grid">
+
+<div class="panel">
+
+<div class="panel-title">
+
+Aktivitas Terbaru
+
+</div>
+
+<div id="latestActivity">
+
+<p>Memuat data...</p>
+
+</div>
+
+</div>
+
+<div class="panel">
+
+<div class="panel-title">
+
+Lokasi Kerusakan Terbanyak
+
+</div>
+
+<div id="topLocation">
+
+<p>Memuat data...</p>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- GRID 4 -->
+
+<section class="dashboard-grid">
+
+<div class="panel">
+
+<div class="panel-title">
+
+Deteksi Terakhir
+
+</div>
+
+<div id="latestDetection">
+
+<p>Memuat data...</p>
+
+</div>
+
+</div>
+
+<div class="panel">
+
+<div class="panel-title">
+
+Rata-rata Confidence
+
+</div>
+
+<div class="confidence-box">
+
+<p id="avgConfidence">
+
+0%
+
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- MAP -->
+
+<section>
+
+<div class="panel map-panel">
+
+<div class="panel-title">
+
+Peta Kerusakan Jalan
+
+</div>
+
+<div id="map"></div>
+
+</div>
+
+</section>
+
+</main>
+
+<script src="dashboard.js"></script>
+
+</body>
+
+</html>

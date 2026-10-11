@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>My Account</title>
+
+  <link
+    rel="stylesheet"
+    href="my-account.css"
+  >
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  >
+
+</head>
+
+<body>
+
+<div class="menu-btn" id="menuBtn">
+☰
+</div>
+
+<div class="overlay" id="overlay"></div>
+
+<aside class="sidebar">
+
+    <div>
+
+
+      <div class="logo">
+
+        <div class="logo-icon">
+          👷‍♂️
+        </div>
+
+        <div>
+
+          <h2>Deteksi Jalan</h2>
+
+          <p>AI Monitoring System</p>
+
+        </div>
+
+      </div>
+
+      <!-- MENU -->
+
+      <div class="menu">
+
+        <a
+          href="index.html"
+          class="menu-item"
+        >
+
+
+          Beranda
+
+        </a>
+
+        <a
+          href="my-account.html"
+          class="menu-item active"
+        >
+
+
+          My Account
+
+        </a>
+
+        <a
+          href="edit-profile.html"
+          class="menu-item"
+        >
+
+
+          Edit Profile
+
+        </a>
+
+        <a
+          href="change-password.html"
+          class="menu-item"
+        >
+
+
+          Change Password
+
+        </a>
+
+      </div>
+
+    </div>
+
+
+    <button
+      class="logout-btn"
+      onclick="logout()"
+    >
+
+      Logout
+
+    </button>
+
+  </aside>
+
+
+  <!-- MAIN CONTENT -->
+
+  <main class="main-content">
+
+    <div class="account-card">
+
+      <!-- PROFILE -->
+
+      <div class="profile-header">
+
+        <div
+          class="avatar"
+          id="avatar"
+        >
+          U
+        </div>
+
+        <div>
+
+          <h1 id="username">
+            Loading...
+          </h1>
+
+          <p id="email">
+            Loading...
+          </p>
+
+        </div>
+
+      </div>
+
+      <!-- INFO -->
+
+      <div class="info-grid">
+
+        <div class="info-box">
+
+          <span class="label">
+
+            Role
+
+          </span>
+
+          <h3 id="role">
+
+            User
+
+          </h3>
+
+        </div>
+
+
+        <div class="info-box">
+
+          <span class="label">
+
+            Hak Akses
+
+          </span>
+
+          <h3 id="points">
+
+            0
+
+          </h3>
+
+        </div>
+
+
+        <div class="info-box">
+
+          <span class="label">
+
+            Status
+
+          </span>
+
+          <h3 class="online">
+
+            Online
+
+          </h3>
+
+        </div>
+
+      </div>
+
+      <!-- BUTTON -->
+
+      <div class="action-area">
+
+        <button
+          class="action-btn"
+          onclick="
+            window.location.href=
+            'edit-profile.html'
+          "
+        >
+
+          Edit Profile
+
+        </button>
+
+        <button
+          class="action-btn secondary"
+          onclick="
+            window.location.href=
+            'change-password.html'
+          "
+        >
+
+          Change Password
+
+        </button>
+
+      </div>
+
+    </div>
+
+  </main>
+
+  <script src="my-account.js"></script>
+
+</body>
+
+</html>

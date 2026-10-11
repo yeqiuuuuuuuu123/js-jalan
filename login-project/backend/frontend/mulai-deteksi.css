@@ -1,0 +1,557 @@
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Poppins',sans-serif;
+}
+
+body{
+  display:flex;
+  min-height:100vh;
+
+  background:
+    linear-gradient(
+      135deg,
+      #020617,
+      #03152c,
+      #082032
+    );
+
+  color:white;
+
+  overflow-x:hidden;
+}
+
+/* =========================
+   SIDEBAR
+========================= */
+
+.sidebar{
+  width:250px;
+  min-height:100vh;
+
+  background:
+    rgba(0,0,0,.25);
+
+  border-right:
+    1px solid rgba(255,255,255,.08);
+
+  padding:24px 18px;
+
+  position:fixed;
+  left:0;
+  top:0;
+
+  -webkit-backdrop-filter:blur(18px);
+  backdrop-filter:blur(18px);
+
+  z-index:999;
+}
+
+.logo{
+  font-size:28px;
+  font-weight:800;
+
+  line-height:1.2;
+
+  margin-bottom:35px;
+
+  background:
+    linear-gradient(
+      90deg,
+      #00f5c3,
+      #00bfff
+    );
+
+  -webkit-background-clip:text;
+  background-clip:text;
+  -webkit-text-fill-color:transparent;
+}
+
+.sidebar nav{
+  display:flex;
+  flex-direction:column;
+
+  gap:10px;
+}
+
+.sidebar nav a{
+  text-decoration:none;
+
+  color:white;
+
+  padding:10px 16px;
+
+  border-radius:16px;
+
+  font-size:15px;
+  font-weight:600;
+
+  transition:.3s;
+}
+
+.sidebar nav a:hover{
+  background:
+    rgba(255,255,255,.06);
+}
+
+.sidebar nav a.active{
+  background:
+    linear-gradient(
+      90deg,
+      #00f5c3,
+      #22a6ff
+    );
+
+  color:#02111f;
+}
+
+/* =========================
+   MAIN
+========================= */
+
+.main{
+  margin-left:250px;
+
+  width:100%;
+
+  padding:35px;
+}
+
+/* =========================
+   HEADER
+========================= */
+
+.header-box{
+  margin-bottom:30px;
+}
+
+.header-box h1{
+  font-size:42px;
+  font-weight:800;
+
+  margin-bottom:10px;
+}
+
+.header-box p{
+  color:#94a3b8;
+
+  font-size:16px;
+}
+
+/* =========================
+   CAMERA CARD
+========================= */
+
+.camera-card{
+
+  background:
+    rgba(255,255,255,.05);
+
+  border:
+    1px solid rgba(255,255,255,.08);
+
+  border-radius:28px;
+
+  padding:24px;
+
+  box-shadow:
+    0 20px 60px rgba(0,0,0,.35);
+
+  -webkit-backdrop-filter:blur(15px);
+  backdrop-filter:blur(15px);
+
+  margin-bottom:28px;
+
+  max-width:1000px;
+
+  margin-left:auto;
+  margin-right:auto;
+}
+
+/* =========================
+   VIDEO WRAPPER
+========================= */
+
+.video-wrapper{
+
+  position:relative;
+
+  width:100%;
+
+  max-width:850px;
+
+  margin:auto;
+
+  overflow:hidden;
+
+  border-radius:22px;
+}
+
+/* =========================
+   VIDEO
+========================= */
+
+#video{
+
+  width:100%;
+
+  height:420px;
+
+  display:block;
+
+  background:black;
+
+  object-fit:cover;
+
+  border-radius:22px;
+
+  border:
+    2px solid rgba(255,255,255,.06);
+
+  box-shadow:
+    0 0 35px rgba(0,255,200,.08);
+}
+
+/* =========================
+   YOLO OVERLAY
+========================= */
+
+#overlay{
+
+  position:absolute;
+
+  top:0;
+  left:0;
+
+  width:100%;
+  height:100%;
+
+  pointer-events:none;
+
+  border-radius:22px;
+}
+
+/* =========================
+   CAMERA CONTROL
+========================= */
+
+.camera-controls{
+
+  margin-top:24px;
+
+  display:flex;
+
+  justify-content:center;
+
+  align-items:center;
+
+  gap:18px;
+
+  flex-wrap:wrap;
+}
+
+/* =========================
+   CAMERA LABEL
+========================= */
+
+.camera-label{
+
+  font-size:15px;
+
+  font-weight:600;
+
+  color:#cbd5e1;
+}
+
+/* =========================
+   CAMERA SELECT
+========================= */
+
+.camera-select{
+
+  padding:14px 18px;
+
+  border-radius:16px;
+
+  border:
+    1px solid rgba(255,255,255,.08);
+
+  background:
+    rgba(255,255,255,.05);
+
+  color:white;
+
+  font-size:14px;
+
+  outline:none;
+
+  min-width:220px;
+
+  -webkit-backdrop-filter:blur(10px);
+  backdrop-filter:blur(10px);
+}
+
+.camera-select option{
+  background:#0f172a;
+  color:white;
+}
+
+/* =========================
+   BUTTON
+========================= */
+
+.btn{
+
+  border:none;
+
+  padding:14px 30px;
+
+  border-radius:16px;
+
+  font-size:15px;
+  font-weight:700;
+
+  cursor:pointer;
+
+  transition:.3s;
+}
+
+.btn:hover{
+  transform:translateY(-3px);
+}
+
+/* =========================
+   START BUTTON
+========================= */
+
+.start-btn{
+
+  background:
+    linear-gradient(
+      90deg,
+      #00f5c3,
+      #22a6ff
+    );
+
+  color:#02111f;
+
+  box-shadow:
+    0 10px 20px rgba(0,255,200,.2);
+}
+
+/* =========================
+   STOP BUTTON
+========================= */
+
+.stop-btn{
+
+  background:
+    linear-gradient(
+      90deg,
+      #ff4d4d,
+      #ff6b6b
+    );
+
+  color:white;
+
+  box-shadow:
+    0 10px 20px rgba(255,0,0,.2);
+}
+
+/* =========================
+   RESULT CARD
+========================= */
+
+.result-card{
+
+  display:grid;
+
+  grid-template-columns:
+    repeat(auto-fit,minmax(220px,1fr));
+
+  gap:20px;
+}
+
+/* =========================
+   RESULT BOX
+========================= */
+
+.result-box{
+
+  background:
+    rgba(255,255,255,.05);
+
+  border:
+    1px solid rgba(255,255,255,.08);
+
+  border-radius:24px;
+
+  padding:24px;
+
+  transition:.3s;
+
+  box-shadow:
+    0 20px 40px rgba(0,0,0,.25);
+
+  -webkit-backdrop-filter:blur(15px);
+  backdrop-filter:blur(15px);
+}
+
+.result-box:hover{
+  transform:translateY(-5px);
+}
+
+.result-box h3{
+
+  color:#94a3b8;
+
+  margin-bottom:12px;
+
+  font-size:17px;
+
+  font-weight:600;
+}
+
+.result-box p{
+
+  font-size:34px;
+
+  font-weight:800;
+}
+
+/* =========================
+   COLORS
+========================= */
+
+#status{
+  color:#00f5c3;
+}
+
+#severity{
+  color:#ffcc00;
+}
+
+#confidence{
+  color:#00bfff;
+}
+
+#fps{
+  color:#ff6b6b;
+}
+
+.menu-btn{
+  display:none;
+}
+
+.mobile-overlay{
+  display:none;
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:900px){
+
+  .menu-btn{
+
+    display:flex;
+
+    position:fixed;
+
+    top:15px;
+    left:15px;
+
+    width:48px;
+    height:48px;
+
+    align-items:center;
+    justify-content:center;
+
+    border-radius:14px;
+
+    background:
+      rgba(255,255,255,.08);
+
+    border:
+      1px solid rgba(255,255,255,.08);
+
+    font-size:24px;
+
+    cursor:pointer;
+
+    z-index:10001;
+
+    -webkit-backdrop-filter:blur(10px);
+    backdrop-filter:blur(10px);
+  }
+
+  .sidebar{
+
+    left:-270px;
+
+    transition:.35s;
+
+    width:250px;
+
+    height:100vh;
+
+    z-index:10000;
+  }
+
+  .sidebar.show{
+    left:0;
+  }
+
+  .mobile-overlay.show{
+
+    display:block;
+
+    position:fixed;
+
+    inset:0;
+
+    background:
+      rgba(0,0,0,.6);
+
+    z-index:9999;
+  }
+
+  .main{
+    margin-left:0;
+    padding:75px 15px 15px;
+  }
+
+  .header-box h1{
+    font-size:28px;
+  }
+
+  .header-box p{
+    font-size:14px;
+  }
+
+  .camera-card{
+    padding:18px;
+  }
+
+  #video{
+    height:260px;
+  }
+
+  .camera-controls{
+    flex-direction:column;
+  }
+
+  .camera-select{
+    width:100%;
+  }
+
+  .btn{
+    width:100%;
+  }
+
+  .result-box p{
+    font-size:24px;
+  }
+}

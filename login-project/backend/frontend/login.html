@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Login - Deteksi Jalan</title>
+
+  <link rel="stylesheet" href="login.css">
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+  <div class="bg"></div>
+
+  <div class="particle p1"></div>
+  <div class="particle p2"></div>
+  <div class="particle p3"></div>
+  <div class="particle p4"></div>
+
+  <div class="container">
+
+
+    <div class="left">
+
+      <div class="logo-box">
+
+        <h1>Deteksi Jalan</h1>
+
+        <p>AI Monitoring System</p>
+
+      </div>
+
+      <div class="hero">
+
+        <img
+          src="login.png"
+          alt="AI Monitoring"
+          class="illustration"
+        >
+
+        <h2 class="hero-title">
+
+          <span class="gradient">
+            Deteksi Jalan AI
+          </span>
+
+        </h2>
+
+        <p class="hero-desc">
+          Monitoring jalan realtime berbasis AI.
+        </p>
+
+      </div>
+
+    </div>
+    <div class="right">
+
+      <div class="login-card">
+
+        <h2>Login</h2>
+
+        <p class="subtitle">
+          Masuk ke akun Anda
+        </p>
+
+
+        <div class="input-group">
+
+          <label>Email</label>
+
+          <div class="input-box">
+
+            <span class="icon">✉</span>
+
+            <input
+              type="email"
+              id="email"
+              placeholder="Masukkan email"
+            >
+
+          </div>
+
+        </div>
+
+        <div class="input-group">
+
+          <label>Password</label>
+
+          <div class="input-box">
+
+            <span class="icon">🔒</span>
+
+            <input
+              type="password"
+              id="password"
+              placeholder="Masukkan password"
+            >
+
+            <button
+              id="togglePassword"
+              type="button"
+              class="eye"
+            >
+              👁
+            </button>
+
+          </div>
+
+        </div>
+
+        <button id="loginBtn">
+
+          <span>Login</span>
+
+
+        </button>
+
+        <p id="message"></p>
+
+        <p class="register">
+
+          Belum punya akun?
+
+          <a href="register.html">
+            Daftar sekarang
+          </a>
+
+        </p>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <script src="login.js"></script>
+
+</body>
+</html>

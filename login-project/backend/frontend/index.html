@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>Deteksi Kerusakan Jalan</title>
+
+  <link
+    rel="stylesheet"
+    href="index.css"
+  >
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600;700;800&display=swap"
+    rel="stylesheet"
+  >
+
+</head>
+
+<body>
+
+  <!-- MENU BUTTON -->
+
+  <div
+    class="menu-btn"
+    id="menuBtn"
+  >
+    ☰
+  </div>
+
+  <div
+    class="overlay"
+    id="overlay"
+  ></div>
+
+  <!-- PROFILE -->
+
+  <div class="top-user">
+
+    <div
+      class="profile-box"
+      id="profileBox"
+    >
+
+      <div class="profile-avatar">
+
+        <span id="profileInitial">
+          R
+        </span>
+
+      </div>
+
+      <div class="profile-text">
+
+        <h4 id="profileName">
+          Loading...
+        </h4>
+
+        <p>
+          Connected
+        </p>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- SIDEBAR -->
+
+  <div
+    class="sidebar"
+    id="sidebar"
+  >
+
+    <div class="sidebar-logo">
+
+      <div class="logo-icon">
+        🚧
+      </div>
+
+      <div class="logo-text">
+
+        <h2>
+          Deteksi Jalan
+        </h2>
+
+        <p>
+          AI Monitoring System
+        </p>
+
+      </div>
+
+    </div>
+
+    <div class="sidebar-menu">
+
+      <p class="sidebar-title">
+        MENU
+      </p>
+
+      <a
+        href="dashboard.html"
+        class="sidebar-link active"
+      >
+         <span>Dashboard</span>
+      </a>
+
+      <a
+        href="my-account.html"
+        class="sidebar-link"
+      >
+         <span>My Account</span>
+      </a>
+
+      <a
+        href="lokasi.html"
+        class="sidebar-link"
+      >
+         <span>Lokasi</span>
+      </a>
+
+      <a
+        href="mulai-deteksi.html"
+        class="sidebar-link"
+        id="menuDeteksi"
+      >
+         <span>Mulai Deteksi</span>
+      </a>
+
+      <a
+        href="rekap-data.html"
+        class="sidebar-link"
+      >
+         <span>Rekap Data</span>
+      </a>
+
+      <a
+        href="rekap-jalan.html"
+        class="sidebar-link"
+      >
+         <span>Rekap Jalan</span>
+
+      <a
+        href="hasil-deteksi.html"
+        class="sidebar-link"
+      >
+         <span>Hasil Deteksi</span>
+      </a>
+
+      <a
+        href="pelaporan.html"
+        class="sidebar-link"
+      >
+         <span>Pelaporan</span>
+      </a>
+
+      <a
+        href="data-riwayat.html"
+        class="sidebar-link"
+      >
+        <span>Data Riwayat</span>
+      </a>
+
+      <a
+        href="admin-inspeksi.html"
+        class="sidebar-link"
+        id="menuAdmin"
+      >
+         <span>Admin Inspeksi</span>
+      </a>
+
+    </div>
+
+    <div class="sidebar-footer">
+
+      <a
+        href="#"
+        onclick="logout()"
+        class="logout-btn"
+      >
+         <span>Logout</span>
+      </a>
+
+    </div>
+
+  </div>
+
+  <!-- HERO -->
+<section class="hero">
+
+  <div class="hero-content">
+
+    <div class="hero-left">
+
+      <h1 class="judul">
+        Sistem Deteksi
+        Kerusakan Jalan
+      </h1>
+
+      <p class="hero-desc">
+
+        Deteksi kerusakan jalan secara otomatis
+        menggunakan YOLOv8 dan GPS Tracking
+        berbasis Artificial Intelligence.
+
+      </p>
+
+      <p class="hero-desc-small">
+
+        Sistem mampu mendeteksi tingkat
+        kerusakan jalan, menyimpan data
+        lokasi, dan menampilkan hasil
+        monitoring pada dashboard.
+
+      </p>
+
+    </div>
+
+    <div class="hero-right">
+
+      <img
+        src="hero-road.png"
+        alt="AI Road Detection"
+      >
+
+    </div>
+
+  </div>
+
+</section>
+
+<section class="fitur">
+
+  <h2>
+    Fitur Utama Sistem
+  </h2>
+
+  <div class="fitur-grid">
+
+    <div class="fitur-card">
+      🎯
+      <h3>Deteksi Otomatis</h3>
+      <p>
+        Identifikasi kerusakan jalan
+        menggunakan YOLOv8.
+      </p>
+    </div>
+
+    <div class="fitur-card">
+      📍
+      <h3>Pemetaan Lokasi</h3>
+      <p>
+        Menampilkan lokasi kerusakan
+        berdasarkan GPS.
+      </p>
+    </div>
+
+    <div class="fitur-card">
+      📊
+      <h3>Monitoring Data</h3>
+      <p>
+        Rekap dan analisis kondisi jalan.
+      </p>
+    </div>
+
+    <div class="fitur-card">
+      📱
+      <h3>Pelaporan</h3>
+      <p>
+        Masyarakat dapat mengirim laporan.
+      </p>
+    </div>
+
+  </div>
+
+</section>
+
+<section class="alur">
+
+  <h2>
+    Alur Sistem
+  </h2>
+
+  <div class="alur-grid">
+
+    <div class="alur-card">
+      <div class="alur-icon">📷</div>
+      <p>Input Data</p>
+    </div>
+
+    <div class="alur-arrow">
+      →
+    </div>
+
+    <div class="alur-card">
+      <div class="alur-icon"> 🧠</div>
+      <p>YOLOv8</p>
+    </div>
+
+    <div class="alur-arrow">
+      →
+    </div>
+
+    <div class="alur-card">
+      <div class="alur-icon">📈</div>
+      <p>Analisis</p>
+    </div>
+
+    <div class="alur-arrow">
+      →
+    </div>
+
+    <div class="alur-card">
+      <div class="alur-icon">💾</div>
+      <p>Database</p>
+    </div>
+
+  </div>
+
+</section>
+
+
+
+
+  <script src="main.js"></script>
+
+</body>
+</html>
+

@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>Edit Profile</title>
+
+  <link
+    rel="stylesheet"
+    href="edit-profile.css"
+  >
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  >
+
+</head>
+
+<body>
+
+  <!-- BACKGROUND -->
+
+  <div class="bg"></div>
+
+  <!-- CONTAINER -->
+
+  <div class="container">
+
+    <!-- LEFT -->
+
+    <div class="left">
+
+      <!-- LOGO -->
+
+      <div class="logo-box">
+
+        <h1>
+          Deteksi Jalan
+        </h1>
+
+        <p>
+          AI Monitoring System
+        </p>
+
+      </div>
+
+      <!-- HERO -->
+
+      <div class="edit-hero">
+
+        <img
+          src="road-ai.png"
+          alt="AI Illustration"
+          class="illustration"
+        >
+
+        <h2 class="edit-hero-title">
+
+          <span class="gradient">
+            Edit Profile
+          </span>
+
+        </h2>
+
+        <p class="edit-hero-desc">
+          Kelola informasi akun Anda dengan aman.
+        </p>
+
+      </div>
+
+    </div>
+
+    <!-- RIGHT -->
+
+    <div class="right">
+
+      <div class="profile-card">
+
+        <!-- TITLE -->
+
+        <h2>
+          Edit
+        </h2>
+
+        <p class="subtitle">
+          Update informasi akun Anda
+        </p>
+
+        <!-- PHOTO -->
+
+        <div class="photo-box">
+
+          <label
+            class="photo-label"
+            for="photoInput"
+          >
+            Foto Profil
+          </label>
+
+          <div
+            class="avatar"
+            id="avatarPreview"
+          >
+            U
+          </div>
+
+          <input
+            type="file"
+            id="photoInput"
+            accept="image/*"
+            title="Unggah foto profil"
+          >
+
+        </div>
+
+        <!-- USERNAME -->
+
+        <div class="input-group">
+
+          <label>
+            Username
+          </label>
+
+          <div class="input-box">
+
+            <input
+              type="text"
+              id="username"
+              placeholder="Masukkan username"
+              autocomplete="off"
+            >
+
+          </div>
+
+        </div>
+
+        <!-- EMAIL -->
+
+        <div class="input-group">
+
+          <label>
+            Email
+          </label>
+
+          <div class="input-box">
+
+            <input
+              type="email"
+              id="email"
+              placeholder="Masukkan email"
+              autocomplete="off"
+            >
+
+          </div>
+
+        </div>
+
+        <!-- SAVE BUTTON -->
+
+        <button id="saveBtn">
+          Simpan
+        </button>
+
+        <!-- MESSAGE -->
+
+        <p id="message"></p>
+
+        <!-- BACK BUTTON -->
+
+        <a
+          href="my-account.html"
+          class="back-btn"
+        >
+          ← Kembali ke My Account
+        </a>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <script src="edit-profile.js"></script>
+
+</body>
+</html>

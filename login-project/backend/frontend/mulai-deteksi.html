@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>
+    Mulai Deteksi
+  </title>
+
+  <!-- CSS -->
+
+  <link
+    rel="stylesheet"
+    href="mulai-deteksi.css"
+  >
+
+  <!-- FONT -->
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet"
+  >
+
+</head>
+
+<body>
+
+  <div class="menu-btn" id="menuBtn">
+☰
+</div>
+
+<div class="mobile-overlay" id="mobileOverlay"></div>
+
+  <!-- =========================
+       SIDEBAR
+  ========================== -->
+
+  <aside class="sidebar">
+
+    <div class="logo">
+      Deteksi Jalan
+    </div>
+
+    <nav>
+
+      <a href="index.html">
+        Beranda
+      </a>
+
+      <a href="my-account.html">
+        My Account
+      </a>
+
+      <a href="dashboard.html">
+        Dashboard
+      </a>
+
+      <a href="lokasi.html">
+        Lokasi
+      </a>
+
+      <a
+        href="mulai-deteksi.html"
+        class="active"
+      >
+        Mulai Deteksi
+      </a>
+
+      <a href="rekap-data.html">
+        Rekap Data
+      </a>
+
+      <a href="hasil-deteksi.html">
+        Hasil Deteksi
+      </a>
+
+      <a href="pelaporan.html">
+        Pelaporan
+      </a>
+
+      <a href="data-riwayat.html">
+        Data Riwayat
+      </a>
+
+      <a href="admin-inspeksi.html">
+        Admin Inspeksi
+      </a>
+
+      <a href="login.html">
+        Logout
+      </a>
+
+    </nav>
+
+  </aside>
+
+  <!-- =========================
+       MAIN
+  ========================== -->
+
+  <main class="main">
+
+    <!-- HEADER -->
+
+    <div class="header-box">
+
+      <h1>
+        Deteksi Kerusakan Jalan Realtime
+      </h1>
+
+      <p>
+        Monitoring kondisi jalan menggunakan
+        YOLOv8 AI Detection System
+      </p>
+
+    </div>
+
+    <!-- =========================
+         CAMERA CARD
+    ========================== -->
+
+    <div class="camera-card">
+
+      <!-- VIDEO WRAPPER -->
+
+      <div class="video-wrapper">
+
+        <!-- VIDEO -->
+
+        <img
+        id="video"
+          alt="Camera Stream"
+              />
+        <!-- YOLO OVERLAY -->
+
+        <canvas id="overlay"></canvas>
+
+      </div>
+
+      <!-- CAMERA CONTROL -->
+
+      <div class="camera-controls">
+
+        <!-- LABEL -->
+
+        <label
+          for="cameraSelect"
+          class="camera-label"
+        >
+          Pilih Kamera
+        </label>
+
+        <!-- SELECT -->
+
+        <select
+          id="cameraSelect"
+          class="camera-select"
+          title="Pilih Kamera"
+        ></select>
+
+        <!-- START -->
+
+        <button
+          class="btn start-btn"
+          onclick="startCamera()"
+        >
+          ▶ Mulai Kamera
+        </button>
+
+        <!-- STOP -->
+
+        <button
+          class="btn stop-btn"
+          onclick="stopCamera()"
+        >
+          ■ Stop
+        </button>
+
+      </div>
+
+    </div>
+
+    <!-- =========================
+         RESULT CARD
+    ========================== -->
+
+    <div class="result-card">
+
+      <!-- STATUS -->
+
+      <div class="result-box">
+
+        <h3>
+          Status Sistem
+        </h3>
+
+        <p id="status">
+          Standby
+        </p>
+
+      </div>
+
+      <!-- DAMAGE -->
+
+      <div class="result-box">
+
+        <h3>
+          Tingkat Kerusakan
+        </h3>
+
+        <p id="severity">
+          -
+        </p>
+
+      </div>
+
+      <!-- CONFIDENCE -->
+
+      <div class="result-box">
+
+        <h3>
+          Confidence
+        </h3>
+
+        <p id="confidence">
+          0%
+        </p>
+
+      </div>
+
+      <!-- FPS -->
+
+      <div class="result-box">
+
+        <h3>
+          FPS Detection
+        </h3>
+
+        <p id="fps">
+          0 FPS
+        </p>
+
+      </div>
+
+    </div>
+
+  </main>
+
+
+  <script src="mulai-deteksi.js"></script>
+
+</body>
+
+</html>

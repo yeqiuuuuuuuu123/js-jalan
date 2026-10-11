@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta
+name="viewport"
+content="width=device-width, initial-scale=1.0"
+>
+
+<title>Pelaporan Kerusakan Jalan</title>
+
+<link
+rel="stylesheet"
+href="pelaporan.css"
+>
+
+<link
+href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+rel="stylesheet"
+>
+
+<link
+    rel="stylesheet"
+    href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+/>
+</head>
+
+<body>
+
+    <div class="menu-btn" id="menuBtn">
+☰
+</div>
+
+<div class="overlay" id="overlay"></div>
+
+<!-- SIDEBAR -->
+
+<div class="sidebar">
+
+<div class="logo">
+Deteksi Jalan
+</div>
+
+<nav>
+
+<a href="index.html">Beranda</a>
+
+<a href="my-account.html">My Account</a>
+
+<a href="dashboard.html">Dashboard</a>
+
+<a href="lokasi.html">Lokasi</a>
+
+<a href="mulai-deteksi.html"
+id="menuDeteksi"
+>
+Mulai Deteksi</a>
+
+<a href="rekap-data.html">Rekap Data</a>
+
+<a href="hasil-deteksi.html">Hasil Deteksi</a>
+
+<a
+href="pelaporan.html"
+class="active"
+>
+Pelaporan
+</a>
+
+<a href="data-riwayat.html">
+Data Riwayat
+</a>
+
+<a href="admin-inspeksi.html"
+id="menuAdmin"
+>
+Admin Inspeksi
+</a>
+
+<a
+href="#"
+onclick="logout()"
+>
+Logout
+</a>
+
+</nav>
+
+</div>
+
+<!-- MAIN -->
+
+<div class="main">
+
+<div class="card">
+
+<h2>
+Pelaporan Kerusakan Jalan
+</h2>
+
+<p class="desc">
+Laporkan kerusakan jalan yang Anda temukan. Laporan akan diverifikasi oleh admin sebelum masuk ke sistem monitoring.
+</p>
+
+<!-- INFO BOX -->
+
+<div class="report-info">
+
+<div class="info-box">
+ GPS Aktif
+</div>
+
+<div class="info-box">
+ Foto Wajib
+</div>
+
+<div class="info-box">
+ Diverifikasi Admin
+</div>
+
+</div>
+
+<!-- PREVIEW -->
+
+<div class="preview-box">
+
+<img
+id="preview"
+src=""
+alt="Preview Gambar"
+>
+
+<div
+class="empty-preview"
+id="emptyPreview"
+>
+
+<div class="preview-icon">
+📷
+</div>
+
+<p>
+Preview Gambar
+</p>
+
+</div>
+
+</div>
+
+<!-- FOTO -->
+
+<label for="img">
+Foto Kerusakan
+</label>
+
+<input
+type="file"
+id="img"
+accept="image/*"
+>
+
+<!-- LOKASI -->
+
+<label for="kota">
+Lokasi Kota
+</label>
+
+<label for="kota">
+  Kota
+</label>
+
+<div class="autocomplete-wrapper">
+  <input
+    type="text"
+    id="kota"
+    placeholder="Cari atau pilih kota..."
+    autocomplete="off"
+    enterkeyhint="search"
+  >
+
+  <div id="kotaDropdown" class="autocomplete-dropdown"></div>
+</div>
+
+
+<label for="jalan">
+  Jalan
+</label>
+
+<div class="autocomplete-wrapper">
+  <input
+    type="text"
+    id="jalan"
+    placeholder="Cari atau pilih jalan..."
+    autocomplete="off"
+    enterkeyhint="search"
+  >
+
+  <div id="jalanDropdown" class="autocomplete-dropdown"></div>
+</div>
+
+<button
+    type="button"
+    id="pilihLokasiBtn"
+    class="btn"
+>
+     Pilih Lokasi di Peta
+</button>
+
+<div id="map"></div>
+
+
+<!-- DESKRIPSI -->
+
+<label for="deskripsi">
+Deskripsi Kerusakan
+</label>
+
+<textarea
+id="deskripsi"
+placeholder="Contoh: Terdapat lubang cukup dalam yang membahayakan pengendara sepeda motor terutama saat malam hari."
+></textarea>
+
+<!-- STATUS LAPORAN -->
+
+<div class="report-status">
+
+<span class="status-badge pending">
+
+Menunggu Verifikasi Admin
+
+</span>
+
+</div>
+
+<!-- BUTTON -->
+
+<button
+id="submitBtn"
+class="btn"
+onclick="kirim()"
+>
+
+Kirim Laporan
+
+</button>
+
+<!-- MESSAGE -->
+
+<p id="status"></p>
+
+</div>
+
+</div>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+<script src="pelaporan.js"></script>
+
+</body>
+
+</html>

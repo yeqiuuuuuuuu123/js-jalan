@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>
+    Hasil Deteksi Jalan
+  </title>
+
+  <link
+    rel="stylesheet"
+    href="hasil-deteksi.css"
+  >
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  >
+
+</head>
+
+<body>
+
+  <div class="menu-btn" id="menuBtn">
+☰
+</div>
+
+<div class="overlay" id="overlay"></div>
+
+  <!-- =========================
+       SIDEBAR
+  ========================== -->
+
+  <aside class="sidebar">
+
+    <div class="logo">
+      Deteksi Jalan
+    </div>
+
+    <nav>
+
+      <a href="index.html">
+        Beranda
+      </a>
+
+      <a href="my-account.html">
+        My Account
+      </a>
+
+      <a href="dashboard.html">
+        Dashboard
+      </a>
+
+      <a href="lokasi.html">
+        Lokasi
+      </a>
+
+      <a href="mulai-deteksi.html"
+      
+        id="menuDeteksi">
+        
+        Mulai Deteksi
+      </a>
+      
+      <a href="rekap-data.html">
+        Rekap Data
+      </a>
+
+      <a
+        href="hasil-deteksi.html"
+        class="active"
+      >
+        Hasil Deteksi
+      </a>
+
+      <a href="pelaporan.html">
+        Pelaporan
+      </a>
+
+      <a href="data-riwayat.html">
+        Data Riwayat
+      </a>
+
+      <a href="admin-inspeksi.html"
+        id="menuAdmin"
+      >
+        Admin Inspeksi
+      </a>
+
+      <a href="login.html">
+        Logout
+      </a>
+
+    </nav>
+
+  </aside>
+
+  <!-- =========================
+       MAIN
+  ========================== -->
+
+  <main class="main">
+
+    <div class="header-box">
+
+      <h1>
+        Hasil Deteksi Jalan
+      </h1>
+
+      <p>
+        Monitoring hasil deteksi kerusakan jalan berbasis AI
+      </p>
+
+    </div>
+
+    <!-- CARD -->
+
+    <div class="table-card">
+
+      <div class="table-header">
+
+        <h2>
+          Monitoring Deteksi Jalan
+        </h2>
+
+        <div class="header-action">
+
+          <input
+            type="text"
+            id="searchInput"
+            placeholder="Cari lokasi..."
+          >
+
+          <button id="refreshBtn">
+            🔄 Refresh Data
+          </button>
+
+        </div>
+
+      </div>
+
+      <!-- TABLE -->
+
+      <div class="table-wrapper">
+
+        <table>
+
+          <thead>
+
+            <tr>
+
+              <th>No</th>
+
+              <th>Tanggal</th>
+
+              <th>Waktu</th>
+
+              <th>Lokasi</th>
+
+              <th>Kerusakan</th>
+
+              <th>Status</th>
+
+              <th id="aksiHeader">Aksi</th>
+
+            </tr>
+
+          </thead>
+
+          <tbody id="tableBody">
+
+            <tr>
+
+              <td
+                colspan="7"
+                class="empty-data"
+              >
+
+                Memuat data...
+
+              </td>
+
+            </tr>
+
+          </tbody>
+
+        </table>
+
+      </div>
+
+    </div>
+
+  </main>
+
+  <script src="hasil-deteksi.js"></script>
+
+</body>
+
+</html>

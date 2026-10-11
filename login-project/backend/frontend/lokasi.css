@@ -1,0 +1,437 @@
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Poppins',sans-serif;
+}
+
+body{
+  display:flex;
+  min-height:100vh;
+
+  background:
+    linear-gradient(
+      135deg,
+      #020617,
+      #03152c,
+      #082032
+    );
+
+  color:white;
+
+  overflow:hidden;
+}
+
+/* =========================
+   SIDEBAR
+========================= */
+
+.sidebar{
+  width:250px;
+  min-height:100vh;
+
+  background:
+    rgba(0,0,0,.25);
+
+  border-right:
+    1px solid rgba(255,255,255,.08);
+
+  padding:24px 18px;
+
+  position:fixed;
+  left:0;
+  top:0;
+
+  z-index:1000;
+
+  overflow-y:auto;
+
+  -webkit-backdrop-filter:blur(18px);
+  backdrop-filter:blur(18px);
+}
+
+/* =========================
+   LOGO
+========================= */
+
+.logo{
+  font-size:28px;
+  font-weight:800;
+
+  line-height:1.2;
+
+  margin-bottom:35px;
+
+  background:
+    linear-gradient(
+      90deg,
+      #00f5c3,
+      #00bfff
+    );
+
+  -webkit-background-clip:text;
+  background-clip:text;
+  -webkit-text-fill-color:transparent;
+}
+
+/* =========================
+   MENU
+========================= */
+
+.sidebar nav{
+  display:flex;
+  flex-direction:column;
+
+  gap:10px;
+}
+
+.sidebar nav a{
+  text-decoration:none;
+
+  color:white;
+
+  padding:10px 16px;
+
+  border-radius:16px;
+
+  font-size:15px;
+  font-weight:600;
+
+  transition:.3s;
+}
+
+.sidebar nav a:hover{
+  background:
+    rgba(255,255,255,.06);
+}
+
+.sidebar nav a.active{
+  background:
+    linear-gradient(
+      90deg,
+      #00f5c3,
+      #22a6ff
+    );
+
+  color:#02111f;
+}
+
+/* =========================
+   MAIN
+========================= */
+
+.main{
+  margin-left:250px;
+
+  width:100%;
+
+  padding:30px;
+}
+
+/* =========================
+   HEADER
+========================= */
+
+.header-box{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+
+  gap:20px;
+
+  margin-bottom:24px;
+}
+
+.header-box h1{
+  font-size:40px;
+  font-weight:800;
+
+  margin-bottom:8px;
+}
+
+.header-box p{
+  color:#94a3b8;
+
+  font-size:15px;
+}
+
+/* =========================
+   PROFILE
+========================= */
+
+.profile-box{
+  display:flex;
+  align-items:center;
+
+  gap:12px;
+
+  padding:10px 14px;
+
+  border-radius:18px;
+
+  background:
+    rgba(255,255,255,.05);
+
+  border:
+    1px solid rgba(255,255,255,.06);
+}
+
+.profile-avatar{
+  width:50px;
+  height:50px;
+
+  border-radius:50%;
+
+  overflow:hidden;
+
+  background:
+    linear-gradient(
+      135deg,
+      #00f5c3,
+      #00bfff
+    );
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  flex-shrink:0;
+}
+
+#profileInitial{
+  width:100%;
+  height:100%;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  font-size:20px;
+  font-weight:800;
+
+  color:#04101d;
+}
+
+.profile-img{
+  width:100%;
+  height:100%;
+
+  object-fit:cover;
+}
+
+.profile-text h4{
+  font-size:16px;
+  font-weight:700;
+}
+
+.profile-text p{
+  color:#00f5c3;
+
+  font-size:13px;
+
+  margin-top:2px;
+}
+
+/* =========================
+   MAP CARD
+========================= */
+
+.map-card{
+  width:100%;
+
+  height:calc(100vh - 120px);
+
+  border-radius:24px;
+
+  overflow:hidden;
+
+  background:
+    rgba(255,255,255,.05);
+
+  border:
+    1px solid rgba(255,255,255,.08);
+
+  box-shadow:
+    0 20px 60px rgba(0,0,0,.35);
+
+  -webkit-backdrop-filter:blur(15px);
+  backdrop-filter:blur(15px);
+}
+
+/* =========================
+   MAP
+========================= */
+
+#map{
+  width:100%;
+  height:100%;
+}
+
+/* =========================
+   LEAFLET
+========================= */
+
+.leaflet-control-zoom{
+  border:none !important;
+
+  overflow:hidden;
+
+  border-radius:14px !important;
+
+  box-shadow:
+    0 10px 25px rgba(0,0,0,.25);
+}
+
+.leaflet-control-zoom a{
+  background:#0f172a !important;
+
+  color:white !important;
+
+  border:none !important;
+
+  width:38px !important;
+  height:38px !important;
+
+  line-height:38px !important;
+
+  font-size:20px !important;
+}
+
+.leaflet-popup-content-wrapper{
+  background:#0f172a;
+
+  color:white;
+
+  border-radius:16px;
+}
+
+.leaflet-popup-tip{
+  background:#0f172a;
+}
+
+/* =========================
+   SCROLLBAR
+========================= */
+
+::-webkit-scrollbar{
+  width:8px;
+}
+
+::-webkit-scrollbar-track{
+  background:#02111f;
+}
+
+::-webkit-scrollbar-thumb{
+  background:
+    linear-gradient(
+      #00f5c3,
+      #00bfff
+    );
+
+  border-radius:20px;
+}
+
+.menu-btn{
+  display:none;
+}
+
+.overlay{
+  display:none;
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:900px){
+
+  body{
+    overflow:auto;
+  }
+
+  .menu-btn{
+
+    display:flex;
+
+    position:fixed;
+
+    top:15px;
+    left:15px;
+
+    width:48px;
+    height:48px;
+
+    align-items:center;
+    justify-content:center;
+
+    background:rgba(255,255,255,.08);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    border-radius:14px;
+
+    font-size:24px;
+
+    z-index:10001;
+
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+
+    cursor:pointer;
+  }
+
+  .sidebar{
+
+    position:fixed;
+
+    left:-270px;
+    top:0;
+
+    width:250px;
+    height:100vh;
+
+    transition:.35s;
+
+    z-index:10000;
+  }
+
+  .sidebar.show{
+    left:0;
+  }
+
+  .overlay.show{
+
+    display:block;
+
+    position:fixed;
+
+    inset:0;
+
+    background:
+      rgba(0,0,0,.6);
+
+    z-index:9999;
+  }
+
+  .main{
+    margin-left:0;
+    padding:75px 15px 15px;
+  }
+
+  .header-box{
+    flex-direction:column;
+    align-items:flex-start;
+  }
+
+  .header-box h1{
+    font-size:26px;
+  }
+
+  .profile-text{
+    display:none;
+  }
+
+  .map-card{
+    height:75vh;
+  }
+}

@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>
+    Data Riwayat
+  </title>
+
+  <!-- CSS -->
+
+  <link
+    rel="stylesheet"
+    href="data-riwayat.css"
+  >
+
+  <!-- GOOGLE FONT -->
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  >
+
+</head>
+
+<div class="menu-btn" id="menuBtn">
+☰
+</div>
+
+<div class="overlay" id="overlay"></div>
+
+<body>
+
+  <!-- =========================
+       SIDEBAR
+  ========================== -->
+
+  <aside class="sidebar">
+
+    <!-- LOGO -->
+
+    <div class="logo">
+      Deteksi Jalan
+    </div>
+
+    <!-- NAVIGATION -->
+
+    <nav>
+
+      <a href="index.html">
+        Beranda
+      </a>
+
+      <a href="my-account.html">
+        My Account
+      </a>
+
+      <a href="dashboard.html">
+        Dashboard
+      </a>
+
+      <a href="lokasi.html">
+        Lokasi
+      </a>
+
+      <a href="mulai-deteksi.html"
+        id="menuDeteksi">
+        Mulai Deteksi
+      </a>
+
+      <a href="rekap-data.html">
+        Rekap Data
+
+      <a href="hasil-deteksi.html">
+        Hasil Deteksi
+      </a>
+
+      <a href="pelaporan.html">
+        Pelaporan
+      </a>
+
+      <a
+        href="data-riwayat.html"
+        class="active"
+      >
+        Data Riwayat
+      </a>
+
+      <a href="admin-inspeksi.html"
+        id="menuAdmin">
+        Admin Inspeksi
+      </a>
+
+      <a href="login.html">
+        Logout
+      </a>
+
+    </nav>
+
+  </aside>
+
+  <!-- =========================
+       MAIN CONTENT
+  ========================== -->
+
+  <main class="main">
+
+    <!-- CONTAINER -->
+
+    <div class="container">
+
+      <!-- HEADER -->
+
+      <div class="header-top">
+
+        <div>
+
+          <h1>
+            Data Riwayat Kerusakan Jalan
+          </h1>
+
+          <p class="subtitle">
+
+            Monitoring riwayat deteksi
+            kerusakan jalan realtime
+            berbasis AI YOLOv8
+
+          </p>
+
+        </div>
+
+        <!-- REFRESH BUTTON -->
+
+        <button
+          class="refresh-btn"
+          onclick="loadData()"
+        >
+          ⟳ Refresh Data
+        </button>
+
+      </div>
+
+      <!-- LOADING -->
+
+      <div id="loading">
+        Loading data...
+      </div>
+
+      <!-- TABLE -->
+
+      <table
+        id="table"
+        hidden
+      >
+
+        <!-- TABLE HEAD -->
+
+        <thead>
+
+          <tr>
+
+            <th>
+              Lokasi
+            </th>
+
+            <th>
+              Severity
+            </th>
+
+            <th>
+              Confidence
+            </th>
+
+            <th>
+              Waktu
+            </th>
+
+            <th id="aksiHeader">
+             Aksi
+            </th>
+
+          </tr>
+
+        </thead>
+
+        <!-- TABLE BODY -->
+
+        <tbody id="dataTable">
+
+          <!-- AUTO JS -->
+
+        </tbody>
+
+      </table>
+
+      <!-- ERROR -->
+
+      <div id="error"></div>
+
+    </div>
+
+  </main>
+
+  <!-- =========================
+       SCRIPT
+  ========================== -->
+
+  <script src="data-riwayat.js"></script>
+
+</body>
+
+</html>

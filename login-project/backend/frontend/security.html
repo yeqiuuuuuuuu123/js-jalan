@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <script src="auth-check.js"></script>
+
+  <title>Security - Ganti Password</title>
+
+  <style>
+    body {
+      background: url("setiaa.png") center/cover no-repeat;
+      font-family: Arial, sans-serif;
+      color: white;
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .card {
+      background: rgba(255,255,255,0.15);
+      -webkit-backdrop-filter: blur(12px);
+      backdrop-filter: blur(12px);
+      padding: 30px;
+      border-radius: 12px;
+      width: 350px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+      text-align: center;
+    }
+
+    h2 {
+      margin-bottom: 20px;
+    }
+
+    input {
+      width: 100%;
+      padding: 10px;
+      margin-top: 10px;
+      border-radius: 6px;
+      border: none;
+      outline: none;
+    }
+
+    button {
+      width: 100%;
+      padding: 10px;
+      margin-top: 15px;
+      border-radius: 6px;
+      border: none;
+      background: #5b6cff;
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+
+    button:hover {
+      background: #4758e6;
+    }
+
+    .logout {
+      background: crimson;
+    }
+
+    .logout:hover {
+      background: darkred;
+    }
+
+    #message {
+      margin-top: 10px;
+      font-size: 14px;
+    }
+  </style>
+</head>
+
+<body>
+
+<div class="card">
+  <h2>Ganti Password</h2>
+
+  <form id="changePasswordForm">
+    <input type="password" id="oldPassword" placeholder="Password lama" required />
+    <input type="password" id="newPassword" placeholder="Password baru" required />
+    <button type="submit">Ganti Password</button>
+  </form>
+
+  <button class="logout" onclick="logout()">Logout</button>
+
+  <p id="message"></p>
+</div>
+
+<script src="security.js"></script>
+<script src="login.js"></script>
+
+</body>
+</html>
